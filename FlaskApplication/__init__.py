@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    text = { 'content': 'Welcome to your nice flask application !' } 
+    text = { 'content': 'Welcome to your somewhat nice flask application !' } 
     return render_template("home.html",
         title = 'Home away from home',
         text = text)
