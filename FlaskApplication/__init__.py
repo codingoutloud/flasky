@@ -1,5 +1,7 @@
 from flask import Flask
+from datetime import *
 from flask import render_template
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -8,6 +10,8 @@ def home():
     return render_template("home.html",
         title = 'Home away from home',
         text = text)
+    print("home page visit at %s (currently running on COMPUTERNAME = %s)" %
+          (datetime.utcnow(), os.getenv('COMPUTERNAME', '<i>unknown</i>'))
 
 
 app.debug = True
