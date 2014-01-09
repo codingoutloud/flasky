@@ -1,12 +1,14 @@
-from flask import Flask
 from datetime import *
 from os import *
+from logging import *
+from flask import Flask
 from flask import render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
+    logger.warn('helllllloo')
     print('home page visit at %s UTC [currently running on COMPUTERNAME = %s]' % 
             (datetime.utcnow(), getenv('COMPUTERNAME', '<i>unknown</i>')))
     text = { 'content': 'Welcome to this lovely looking flask application !' } 
