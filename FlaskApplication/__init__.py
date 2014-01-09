@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    logger.warn('helllllloo')
+    Logger.warning('helllllloo')
+    Logger.error('danger Will Robinson')
     print('home page visit at %s UTC [currently running on COMPUTERNAME = %s]' % 
             (datetime.utcnow(), getenv('COMPUTERNAME', '<i>unknown</i>')))
     text = { 'content': 'Welcome to this lovely looking flask application !' } 
