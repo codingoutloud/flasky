@@ -8,10 +8,8 @@ app = Flask(__name__)
 def home():
     text = { 'content': 'Welcome to this lovely looking flask application !' } 
     return render_template("home.html",
-        title = 'Home away from home',
+        title = 'Flasky Home',
         text = text)
-    print("home page visit at %s (currently running on COMPUTERNAME = %s)" %
-          (datetime.utcnow(), os.getenv('COMPUTERNAME', '<i>unknown</i>'))
 
 
 app.debug = True
