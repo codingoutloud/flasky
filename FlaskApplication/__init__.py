@@ -36,7 +36,7 @@ def home():
     logging.debug('hello #%d from the LOGGER', simple_counter)
 	#logging.debug('home page visit at %s UTC [currently running on COMPUTERNAME = %s]' %
 	#    (datetime.utcnow(), os.getenv('COMPUTERNAME', '<i>unknown</i>')))
-    text = { 'content': 'Welcome to this rather fine flask application!' } 
+    text = { 'content': 'Welcome to this rather fine flask application! [%d]' % simple_counter } 
     return render_template('home.html',
         title = 'Home of The Flasky',
         text = text)
