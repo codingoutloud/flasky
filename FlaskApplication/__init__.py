@@ -14,10 +14,13 @@ def init_logging(plat_root_log_dir):
     log_file_dir = os.path.join(plat_root_log_dir, 'flaskylogs')
     log_file_path = os.path.join(log_file_dir, 'flasky.log')
 
+    log_file_dir_already_exists = os.path.exists(log_file_dir)
+    if not log_file_dir_already_exists:
+        os.makedirs(log_file_dir)
+
     logging.basicConfig(format='%(levelname)s [%(asctime)s]: %(message)s', filename=log_file_path, level=log_level)
 
-    if not os.path.exists(log_file_dir):
-        os.makedirs(log_file_dir)
+    if not log_file_dir_already_exists:
         logging.info('Created %s logging directory', log_file_dir)
     logging.info('Flasky is logging to %s at level %s', log_file_path, log_level)
     return log_file_path
