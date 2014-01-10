@@ -31,6 +31,7 @@ log_file_path = init_logging(plat_root_log_dir)
 
 @app.route('/')
 def home():
+    global simple_counter
     simple_counter = simple_counter + 1
     logging.debug('hello #%d from the LOGGER', simple_counter)
 	#logging.debug('home page visit at %s UTC [currently running on COMPUTERNAME = %s]' %
