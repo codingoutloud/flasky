@@ -7,7 +7,7 @@ import logging
 app = Flask(__name__)
 
 logging.basicConfig(filename='flasky.log',level=logging.DEBUG)
-logging.debug('LOG FILE ENABLED as file %s' % log_file)
+#logging.info('LOG FILE ENABLED as file %s' % log_file)
 
 @app.route('/')
 def home():
