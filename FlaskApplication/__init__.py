@@ -32,7 +32,7 @@ log_file_path = init_logging(plat_root_log_dir)
 @app.route('/')
 def home():
     global simple_counter
-    simple_counter = simple_counter + 1
+    simple_counter += 1
     logging.debug('hello #%d from the LOGGER running on COMPUTERNAME = %s', 
         simple_counter, os.getenv('COMPUTERNAME', 'unknown'))
     text = { 'content': 'Welcome to this rather fine flask application! [%d]' % simple_counter } 
