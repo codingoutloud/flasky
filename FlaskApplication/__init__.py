@@ -35,7 +35,7 @@ def home():
 	#    (datetime.utcnow(), os.getenv('COMPUTERNAME', '<i>unknown</i>')))
     text = { 'content': 'Welcome to this rather fine flask application!' } 
     return render_template('home.html',
-        title = 'Home of Flasky',
+        title = 'Home of The Flasky',
         text = text)
 
 app.debug = True
