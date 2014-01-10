@@ -1,18 +1,34 @@
+import os
+import logging
 from datetime import *
-from os import *
 from flask import Flask
 from flask import render_template
-import logging
 
 app = Flask(__name__)
 
-logging.basicConfig(filename='flasky.log',level=logging.DEBUG)
-#logging.info('LOG FILE ENABLED as file %s' % log_file)
+# assumes import os and import logging
+# pass in root folder where logging is allowed (correct permissions are assumed)
+# returns log_file_path
+def init_logging(plat_root_log_dir):
+    log_level = logging.DEBUG
+    log_file_dir = os.path.join(plat_root_log_dir, 'flaskylogs')
+    log_file_path = os.path.join(log_file_dir + 'flasky.log')
+
+    logging.basicConfig(format='%(levelname)s [%(asctime)s]: %(message)s', filename=log_file_path, level=log_level)
+
+    if not os.path.exists(log_file_dir):
+        os.makedirs(log_file_dir)
+        logging.info('Created %s logging directory', log_file_dir)
+    logging.info('Flasky is logging to %s at level %s', log_file_path, log_level)
+    return log_file_path
+
+plat_root_log_dir = 'd:\\home\\logfiles'
+log_file_path = init_logging(plat_root_log_dir)
 
 @app.route('/')
 def home():
-    #logging.info('home page visit at %s UTC [currently running on COMPUTERNAME
-        #(datetime.utcnow(), getenv('COMPUTERNAME', '<i>unknown</i>')))
+	logging.debug('home page visit at %s UTC [currently running on COMPUTERNAME = %s]' %
+	    (datetime.utcnow(), os.getenv('COMPUTERNAME', '<i>unknown</i>')))
     text = { 'content': 'Welcome to this lovely looking flask application !' } 
     return render_template('home.html',
         title = 'Flasky Home',
