@@ -33,9 +33,8 @@ log_file_path = init_logging(plat_root_log_dir)
 def home():
     global simple_counter
     simple_counter = simple_counter + 1
-    logging.debug('hello #%d from the LOGGER', simple_counter)
-	#logging.debug('home page visit at %s UTC [currently running on COMPUTERNAME = %s]' %
-	#    (datetime.utcnow(), os.getenv('COMPUTERNAME', '<i>unknown</i>')))
+    logging.debug('hello #%d from the LOGGER running on COMPUTERNAME = %s', 
+        simple_counter, os.getenv('COMPUTERNAME', 'unknown'))
     text = { 'content': 'Welcome to this rather fine flask application! [%d]' % simple_counter } 
     return render_template('home.html',
         title = 'Home of The Flasky',
