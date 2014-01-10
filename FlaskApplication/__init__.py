@@ -5,7 +5,6 @@ from flask import Flask
 from flask import render_template
 
 app = Flask(__name__)
-
 simple_counter = 0
 
 # assumes import os and import logging
