@@ -27,8 +27,9 @@ log_file_path = init_logging(plat_root_log_dir)
 
 @app.route('/')
 def home():
-	logging.debug('home page visit at %s UTC [currently running on COMPUTERNAME = %s]' %
-	    (datetime.utcnow(), os.getenv('COMPUTERNAME', '<i>unknown</i>')))
+    logging.debug('hello from the LOGGER')
+	#logging.debug('home page visit at %s UTC [currently running on COMPUTERNAME = %s]' %
+	#    (datetime.utcnow(), os.getenv('COMPUTERNAME', '<i>unknown</i>')))
     text = { 'content': 'Welcome to this lovely looking flask application !' } 
     return render_template('home.html',
         title = 'Flasky Home',
