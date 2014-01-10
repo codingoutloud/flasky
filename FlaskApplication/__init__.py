@@ -12,7 +12,7 @@ app = Flask(__name__)
 def init_logging(plat_root_log_dir):
     log_level = logging.DEBUG
     log_file_dir = os.path.join(plat_root_log_dir, 'flaskylogs')
-    log_file_path = os.path.join(log_file_dir + 'flasky.log')
+    log_file_path = os.path.join(log_file_dir, 'flasky.log')
 
     logging.basicConfig(format='%(levelname)s [%(asctime)s]: %(message)s', filename=log_file_path, level=log_level)
 
@@ -30,7 +30,7 @@ def home():
     logging.debug('hello from the LOGGER')
 	#logging.debug('home page visit at %s UTC [currently running on COMPUTERNAME = %s]' %
 	#    (datetime.utcnow(), os.getenv('COMPUTERNAME', '<i>unknown</i>')))
-    text = { 'content': 'Welcome to this lovely looking flask application !' } 
+    text = { 'content': 'Welcome to this lovely looking flask application!' } 
     return render_template('home.html',
         title = 'Flasky Home',
         text = text)
