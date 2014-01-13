@@ -41,7 +41,7 @@ def home():
 
 
     return render_template('home.html',
-        title = 'Home of The Flasky Appy',
+        title = 'Home of Flasky',
         text = text)
 
 app.debug = True
