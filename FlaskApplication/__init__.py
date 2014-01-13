@@ -35,9 +35,13 @@ def home():
     simple_counter += 1
     logging.debug('hello #%d from the LOGGER running on COMPUTERNAME = %s', 
         simple_counter, os.getenv('COMPUTERNAME', 'unknown'))
-    text = { 'content': 'Welcome to this rather fine flask application! [%d]' % simple_counter } 
+
+
+    text = { 'content': 'Welcome to this rather decent flask application! [%d]' % simple_counter } 
+
+
     return render_template('home.html',
-        title = 'Home of The Flasky',
+        title = 'Home of The Flasky Appy',
         text = text)
 
 app.debug = True
