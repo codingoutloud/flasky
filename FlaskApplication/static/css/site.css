@@ -7,3 +7,8 @@ body {
     margin: 0;
     padding:50px ;
 }
+
+.wow {
+    font-weight: bold;
+    color: blue;
+}
