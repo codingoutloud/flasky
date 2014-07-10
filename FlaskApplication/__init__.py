@@ -37,7 +37,7 @@ def home():
         simple_counter, os.getenv('COMPUTERNAME', 'unknown'))
 
 
-    text = { 'content': 'This flask site has been visited [%d] times!!!!!!' % simple_counter } 
+    text = { 'content': 'This sophisticated flask application has been visited [%d] times!!!!!!' % simple_counter } 
 
 
     return render_template('home.html',
