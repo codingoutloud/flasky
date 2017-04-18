@@ -38,7 +38,7 @@ def home():
 
 
     if current_user.is_authenticated():
-        text = { 'content': 'hello ' % current_user.get_id() } 
+        text = { 'content': 'hello %s' % current_user.get_id() } 
     else:
         text = { 'content': 'This TOTALLY WICKED sophisticated flask application has been visited [%d] times since last deployment' % simple_counter } 
 
