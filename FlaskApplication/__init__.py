@@ -36,12 +36,12 @@ def home():
     logging.debug('hello #%d from the LOGGER running on COMPUTERNAME = %s', 
         simple_counter, os.getenv('COMPUTERNAME', 'unknown'))
 
-
-    if current_user.is_authenticated():
-        text = { 'content': 'hello %s' % current_user.get_id() } 
-    else:
-        text = { 'content': 'This TOTALLY WICKED sophisticated flask application has been visited [%d] times since last deployment' % simple_counter } 
-
+    # http://stackoverflow.com/questions/19274226/how-to-track-the-current-user-in-flask-login
+    # http://flask-login.readthedocs.io/en/latest/#configuring-your-application
+    #if current_user.is_authenticated():
+    #    text = { 'content': 'hello %s' % current_user.get_id() } 
+    #else:
+    text = { 'content': 'This WICKED sophisticated flask application has been visited [%d] times since last deployment' % simple_counter } 
 
     return render_template('home.html',
         title = 'Home of Flasky',
