@@ -37,7 +37,10 @@ def home():
         simple_counter, os.getenv('COMPUTERNAME', 'unknown'))
 
 
-    text = { 'content': 'This TOTALLY WICKED sophisticated flask application has been visited [%d] times since last deployment' % simple_counter } 
+    if current_user.is_authenticated():
+        text = { 'content': 'hello ' % current_user.get_id() } 
+    else:
+        text = { 'content': 'This TOTALLY WICKED sophisticated flask application has been visited [%d] times since last deployment' % simple_counter } 
 
 
     return render_template('home.html',
