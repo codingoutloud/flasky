@@ -7,7 +7,7 @@ from flask import render_template
 app = Flask(__name__)
 simple_counter = 0
 
-# change the file
+# change the file 5:41
 
 # assumes import os and import logging
 # pass in root folder where logging is allowed (correct permissions are assumed)
