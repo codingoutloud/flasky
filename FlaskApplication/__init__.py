@@ -43,7 +43,7 @@ def home():
     #if current_user.is_authenticated():
     #    text = { 'content': 'hello %s' % current_user.get_id() } 
     #else:
-    text = { 'content': 'This WICKED sophisticated flask application has been visited [%d] times since last deployment' % simple_counter } 
+    text = { 'content': 'This WICKED sophisticated flask application has been visited [%d] times since last deployment. One might have been by Subrata.' % simple_counter } 
 
     return render_template('home.html',
         title = 'Home of Flasky',
